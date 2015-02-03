@@ -1,0 +1,22 @@
+{
+  "name": "kata-string-calculator",
+  "keywords": [
+    "kata",
+    "spectacular",
+    "runner",
+    "karma",
+    "string",
+    "calculator"
+  ],
+  "author": "Tam Pham<tampham4@live.com>",
+  "dependencies": {
+    "lodash": "~2.4.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "expect.js": "*",
+    "grunt-simple-mocha": "*",
+    "load-grunt-tasks": "~0.6.0"
+  },
+  "license": "MIT"
+}
