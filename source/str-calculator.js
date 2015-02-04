@@ -1,7 +1,7 @@
 'use strict'
 
 var split = function(strNums){
-  return strNums.split(',');
+  return strNums.split(/[,\n]+/);
 };
 
 exports.add = function(strNums){
