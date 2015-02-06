@@ -1,9 +1,10 @@
 'use strict'
 
-var expect = require('expect.js');
+var
+  expect = require('expect.js'),
+  strCal = require('../source/str-calculator.js');
 
 describe('StrCal', function(){
-  var strCal = require('../source/str-calculator.js');
 
   // step 1
   it('"" should be 0', function(){
@@ -30,6 +31,15 @@ describe('StrCal', function(){
   // step 3
   it('Input can contain new lines between numbers', function(){
     expect(strCal.add('1,2\n23')).equal(26);
+  })
+
+  // step 4
+  it('Custom delimiters', function(){
+    expect(strCal.add('//;\n1;2;23')).equal(26);
+  })
+
+  it('Input can contain new lines between numbers', function(){
+    expect(strCal.add('//|\n1|2\n23')).equal(26);
   })
 
 });
