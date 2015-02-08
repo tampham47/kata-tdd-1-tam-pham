@@ -31,9 +31,16 @@ var calculator = {
   },
 
   getCustomDelimiters: function(express){
-    var delimiters = []
-    if (express.indexOf('//') === 0)
+    var delimiters = [],
+      delimiter = '';
+    if (express.indexOf('//[') === 0)
+    { // delimiter can be of any length
+      delimiter = express.substring(3, express.indexOf(']'))
+      delimiters.push(delimiter);
+    } else if (express.indexOf('//') === 0)
+    { // delimiter with 1 char
       delimiters.push(express.charAt(2));
+    }
     return delimiters;
   },
 

@@ -55,7 +55,8 @@ describe('calculator', function(){
   })
 
   describe('Delimiters can be of any length with the following format', function(){
-    checkResult('//***\n1001***1***2***3', 6);
+    checkResult('//[***]\n1001***1***2***3', 6);
+    checkResult('//[#@]\n1001#@1#@2#@3', 6);
   })
 });
 
