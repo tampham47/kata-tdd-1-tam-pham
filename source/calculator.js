@@ -48,10 +48,16 @@ var calculator = {
   },
 
   split: function(express){
-    var delimiters = this.getCustomDelimiters(express);
+    var
+      // get custom delimiter
+      delimiters = this.getCustomDelimiters(express),
+      // return a string without the first line
+      pExpress = '';
 
-    if (delimiters.length > 0)
-      express = this.replaceToCommas(express.substring(4), delimiters);
+    if (delimiters.length > 0){
+      pExpress = express.substring(express.indexOf('\n') + 1);
+      express = this.replaceToCommas(pExpress, delimiters);
+    }
 
     return express.split(/[\n,]+/);
   },
