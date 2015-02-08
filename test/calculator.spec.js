@@ -7,9 +7,15 @@ describe('calculator', function(){
     });
   }
 
-  checkResult('', 0);
-  checkResult('1', 1);
-  checkResult('1,2', 3);
+  describe('add method', function(){
+    checkResult('', 0);
+    checkResult('1', 1);
+    checkResult('1,2', 3);
+  });
+
+  describe('handle unknown amount of numbers', function(){
+    checkResult('1,2,k', 3);
+  });
 
 });
 

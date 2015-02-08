@@ -7,7 +7,8 @@ var calculator = {
       result = 0;
 
     for (var i=0; i<pices.length; i++) {
-      result += parseInt(pices[i] || 0);
+      if (!isNaN(parseInt(pices[i] || 0)))
+        result += parseInt(pices[i] || 0);
     }
 
     return result;
