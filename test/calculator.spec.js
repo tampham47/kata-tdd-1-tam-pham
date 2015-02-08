@@ -2,7 +2,7 @@
 
 describe('calculator', function(){
   function checkResult(express, value) {
-    it('should evaluate "' + express + '" to ' + value, function(){
+    it('should evaluate "' + express.replace(/\n/g, '\\n') + '" to ' + value, function(){
       expect(calculator.add(express)).toEqual(value);
     });
   }
@@ -19,8 +19,12 @@ describe('calculator', function(){
 
   describe('new lines', function(){
     checkResult('1\n2', 3);
-    checkResult('1,2\n5', 8);
+    checkResult('1\n2\n5', 8);
   })
 
+  describe('different delimiters', function(){
+    checkResult('//;\n1;2', 3);
+    checkResult('//;\n1;2;3', 6);
+  })
 });
 
