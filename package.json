@@ -1,11 +1,8 @@
 {
-  "name": "kata-string-calculator",
+  "name": "CalculatorTDDKata",
   "keywords": [
     "kata",
-    "spectacular",
-    "runner",
-    "karma",
-    "string",
+    "TDD",
     "calculator"
   ],
   "author": "Tam Pham<tampham4@live.com>",
@@ -13,6 +10,10 @@
   },
   "devDependencies": {
     "grunt": "~0.4",
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-karma": "*",
+    "load-grunt-tasks": "*",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.7",
