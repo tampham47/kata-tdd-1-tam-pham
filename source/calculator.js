@@ -73,7 +73,7 @@ var calculator = {
       express = this.replaceToCommas(pExpress, delimiters);
     }
 
-    // return an array with numbers
+    // split with only commas and 'new line'
     return express.split(/[\n,]+/);
   },
 
