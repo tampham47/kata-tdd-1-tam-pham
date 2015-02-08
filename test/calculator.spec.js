@@ -53,9 +53,19 @@ describe('calculator', function(){
     checkResult('//|\n1001|5', 5);
   });
 
-  describe('Delimiters can be of any length with the following format', function(){
+  describe('Delimiters can be of any length', function(){
     checkResult('//[***]\n1001***1***2***3', 6);
     checkResult('//[#@]\n1001#@1#@2#@3', 6);
+  });
+
+  describe('Allow multiple delimiters', function(){
+    checkResult('//[*][&]\n1001*1&2*3', 6);
+    checkResult('//[*][&][%]\n1001*1&2%3', 6);
+  });
+
+  describe('multiple delimiters with length longer than one char', function(){
+    checkResult('//[*][&&^]\n1001*1&&^2*2', 5);
+    checkResult('//[*][&][%%%%&]\n1001*1&2%%%%&2', 5);
   });
 });
 

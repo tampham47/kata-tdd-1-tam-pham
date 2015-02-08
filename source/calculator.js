@@ -34,8 +34,14 @@ var calculator = {
       delimiter = '';
     if (express.indexOf('//[') === 0)
     { // delimiter can be of any length
-      delimiter = express.substring(3, express.indexOf(']'));
-      delimiters.push(delimiter);
+      // remove a couple of slash
+      express = express.substring(2);
+      while (express.indexOf('[') >= 0){
+        delimiter = express.substring(1, express.indexOf(']'));
+        // remove the first delimiter
+        express = express.substring(express.indexOf(']') + 1);
+        delimiters.push(delimiter);
+      }
     } else if (express.indexOf('//') === 0)
     { // delimiter with 1 char
       delimiters.push(express.charAt(2));
