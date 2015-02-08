@@ -37,6 +37,7 @@ var calculator = {
     return delimiters;
   },
 
+  // replace all custom delimiter to commas
   replaceToCommas: function(express, delimiters){
     for (var i=0; i<delimiters.length; i++){
       while (express.indexOf(delimiters[i]) >= 0)
@@ -56,9 +57,11 @@ var calculator = {
 
     if (delimiters.length > 0){
       pExpress = express.substring(express.indexOf('\n') + 1);
+      // create new express with only commas
       express = this.replaceToCommas(pExpress, delimiters);
     }
 
+    // return an array with numbers
     return express.split(/[\n,]+/);
   },
 
