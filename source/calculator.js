@@ -57,10 +57,15 @@ var calculator = {
   },
 
   calculatorSum: function(pices){
-    var result = 0;
+    var result = 0,
+      num = 0;
+
     for (var i=0; i<pices.length; i++) {
-      if (!isNaN(parseInt(pices[i] || 0)))
-        result += parseInt(pices[i] || 0);
+      if (!isNaN(parseInt(pices[i] || 0))){
+        num = parseInt(pices[i] || 0)
+        if (!(num > 1000))
+          result += num;
+      }
     }
 
     return result;

@@ -49,5 +49,9 @@ describe('calculator', function(){
       expect(caugh.indexOf('-1')).not.toEqual(-1);
     })
   })
+
+  describe('Numbers bigger than 1000', function(){
+    checkResult('//|\n1001|5', 5);
+  })
 });
 
