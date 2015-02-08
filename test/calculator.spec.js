@@ -26,5 +26,28 @@ describe('calculator', function(){
     checkResult('//;\n1;2', 3);
     checkResult('//;\n1;2;3', 6);
   })
+
+  describe('negative numbers are not allowed', function(){
+    var caugh = null;
+    it('single negative numbers', function(){
+      try {
+        calculator.add('-1;5');
+      }
+      catch(err){
+        caugh = err;
+      }
+      expect(caugh.indexOf('-1')).toEqual(-1);
+    });
+
+    it('multi negative numbers', function(){
+      try {
+        calculator.add('//;\n-1;-2;5');
+      }
+      catch(err){
+        caugh = err;
+      }
+      expect(caugh.indexOf('-1')).not.toEqual(-1);
+    })
+  })
 });
 

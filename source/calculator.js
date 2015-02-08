@@ -4,7 +4,30 @@ var calculator = {
   add: function(nums) {
     var pices = this.split(nums);
 
+    this.checkValidity(pices);
     return this.calculatorSum(pices);
+  },
+
+  checkValidity: function(pices){
+    var
+      negatives = [],
+      num = 0;
+
+    for (var i=0; i<pices.length; i++){
+      if (!isNaN(parseInt(pices[i] || 0))){
+        num = parseInt(pices[i]);
+        if (num < 0)
+          negatives.push(num);
+      }
+    }
+
+    if (negatives.length > 0)
+    {
+      if (negatives.length === 1)
+        throw 'negatives not allowed.';
+      else
+        throw 'negatives not allowed. ' + negatives.join(', ');
+    }
   },
 
   getCustomDelimiters: function(express){
