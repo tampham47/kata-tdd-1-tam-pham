@@ -1,4 +1,3 @@
-'use strict'
 
 var calculator = {
   add: function(nums) {
@@ -35,7 +34,7 @@ var calculator = {
       delimiter = '';
     if (express.indexOf('//[') === 0)
     { // delimiter can be of any length
-      delimiter = express.substring(3, express.indexOf(']'))
+      delimiter = express.substring(3, express.indexOf(']'));
       delimiters.push(delimiter);
     } else if (express.indexOf('//') === 0)
     { // delimiter with 1 char
@@ -78,8 +77,8 @@ var calculator = {
 
     for (var i=0; i<pices.length; i++) {
       if (!isNaN(parseInt(pices[i] || 0))){
-        num = parseInt(pices[i] || 0)
-        if (!(num > 1000))
+        num = parseInt(pices[i] || 0);
+        if ((num <= 1000))
           result += num;
       }
     }
